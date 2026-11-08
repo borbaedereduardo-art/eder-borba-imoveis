@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éder Borba Imóveis | Bombinhas - SC</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0a1118;
+            --card-bg: #141e28;
+            --accent-gold: #c5a059;
+            --accent-green: #25d366;
+            --text-light: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 8%;
+            background: rgba(10, 17, 24, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .btn-whatsapp-header {
+            background-color: var(--accent-green);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 8% 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: #000;
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Imóveis Grid */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 8% 4rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #2a3847;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .badge-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-location {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-price {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .card-features {
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .btn-card-zap {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: rgba(37, 211, 102, 0.1);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 0.7rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Contato */
+        .contact-section {
+            background-color: var(--card-bg);
+            padding: 4rem 8%;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            color: var(--text-muted);
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--accent-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">ÉDER BORBA <span>IMÓVEIS</span></div>
+        <a href="https://wa.me/554796153353" class="btn-whatsapp-header" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-subtitle">Seu novo endereço no paraíso</div>
+        <h1>Imóveis de Alto Padrão em Bombinhas e Região</h1>
+        <p>Consultoria imobiliária com atendimento exclusivo, transparência e suporte do primeiro contato à entrega das chaves.</p>
+        <div class="hero-buttons">
+            <a href="#imoveis" class="btn-primary">Ver Imóveis Disponíveis</a>
+            <a href="https://wa.me/554796153353?text=Olá,%20gostaria%20de%20receber%20opções%20de%20imóveis." class="btn-secondary" target="_blank">Falar com o Corretor</a>
+        </div>
+    </section>
+
+    <!-- Lista de Imóveis -->
+    <h2 class="section-title" id="imoveis">Destaques da Semana</h2>
+    <div class="properties-grid">
+        
+        <!-- Card Imóvel 1 -->
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80');">
+                <span class="badge-tag">Bombas, Bombinhas</span>
+            </div>
+            <div class="card-content">
+                <div class="card-location"><i class="fa-solid fa-location-dot"></i> 200m da praia</div>
+                <div class="card-title">Apartamento com 3 Suítes e Vista Mar</div>
+                <div class="card-price">R$ 1.250.000</div>
+                <div class="card-features">
+                    <span><i class="fa-solid fa-bed"></i> 3 Suítes</span>
+                    <span><i class="fa-solid fa-car"></i> 2 Vagas</span>
+                    <span><i class="fa-solid fa-ruler-combined"></i> 110m²</span>
+                </div>
+                <a href="https://wa.me/554796153353?text=Quero%20saber%20mais%20sobre%20o%20Apartamento%20em%20Bombas" class="btn-card-zap" target="_blank">Tenho Interesse</a>
+            </div>
+        </div>
+
+        <!-- Card Imóvel 2 -->
+        <div class="card">
+            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80');">
+                <span class="badge-tag">Praia de Canto Grande</span>
+            </div>
+            <div class="card-content">
+                <div class="card-location"><i class="fa-solid fa-location-dot"></i> Mar de Dentro</div>
+                <div class="card-title">Casa de Alto Padrão com Piscina</div>
+                <div class="card-price">R$ 2.800.000</div>
+                <div class="card-features">
+                    <span><i class="fa-solid fa-bed"></i> 4 Quartos</span>
+                    <span><i class="fa-solid fa-car"></i> 4 Vagas</span>
+                    <span><i class="fa-solid fa-ruler-combined"></i> 250m²</span>
+                </div>
+                <a href="https://wa.me/554796153353?text=Quero%20saber%20mais%20sobre%20a%20Casa%20em%20Canto%20Grande" class="btn-card-zap" target="_blank">Tenho Interesse</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contato -->
+    <section class="contact-section">
+        <h2>Fale com Éder Borba</h2>
+        <p>Atendimento especializado em imóveis na região de Bombinhas/SC</p>
+        <div class="contact-info">
+            <div><i class="fa-solid fa-phone"></i> +55 (47) 9615-3353</div>
+            <div><i class="fa-solid fa-envelope"></i> borbaedereduardo@gmail.com</div>
+        </div>
+    </section>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/554796153353" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
