@@ -4,7 +4,7 @@ Abra `index.html` diretamente no navegador ou no VS Code com Live Server.
 
 ## Personalização rápida
 No `index.html`, procure por:
-- `5547999999999` → troque pelo WhatsApp real do Eder, com DDI +55.
+- `5547999999999` → troque pelo WhatsApp real do , com DDI +55.
 - `@ederborba.imoveis` → troque pelo Instagram se necessário.
 - Textos, metragem, quartos e valores → altere diretamente no HTML.
 - URLs `images.unsplash.com` → podem ser substituídas pelas fotos reais dos imóveis.
